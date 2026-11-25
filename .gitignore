@@ -1,0 +1,7 @@
+trainer/
+app/vaultcorp.db
+app/uploads/*
+!app/uploads/.gitkeep
+__pycache__/
+*.pyc
+.DS_Store

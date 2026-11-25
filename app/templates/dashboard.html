@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Welcome, {{ user.username }}</h1>
+<div class="card">
+  <strong>Role:</strong> {{ user.role }}<br>
+  <strong>Email:</strong> {{ user.email }}<br>
+  <strong>Coins:</strong> {{ user.coins }}
+</div>
+<h3>Navigate</h3>
+<ul>
+  <li><a href="/directory">Employee directory</a></li>
+  <li><a href="/profile">Profile settings</a></li>
+  <li><a href="/store">Coin store</a></li>
+</ul>
+{% endblock %}

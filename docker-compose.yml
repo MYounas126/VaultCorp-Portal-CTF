@@ -1,0 +1,14 @@
+services:
+  vaultcorp-hard:
+    build: ./app
+    container_name: vaultcorp-hard
+    ports:
+      - "127.0.0.1:5000:5000"
+    volumes:
+      - uploads:/app/uploads
+      - flags:/opt/flags
+    restart: unless-stopped
+
+volumes:
+  uploads:
+  flags:

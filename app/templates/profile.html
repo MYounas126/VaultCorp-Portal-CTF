@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Profile</h1>
+<form method="post" action="/profile/update">
+<label>Email</label><input name="email" value="{{ user.email }}">
+<label>Bio (supports simple markup)</label>
+<textarea name="bio" rows="3">{{ user.bio }}</textarea>
+<button type="submit">Save</button>
+</form>
+<p style="color:#888;font-size:12px">Avatar upload: POST a file to /avatar/upload (field name <code>file</code>), SVG supported.</p>
+{% endblock %}

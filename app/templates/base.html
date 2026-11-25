@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VaultCorp</title>
+<style>
+body { font-family: -apple-system, Segoe UI, sans-serif; margin: 0; background: #f4f5f7; color: #1a1a1a; }
+header { background: #0A0A0A; color: #fff; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; }
+header a { color: #fff; text-decoration: none; margin-right: 16px; }
+header .brand { color: #EE2737; font-weight: 700; font-size: 18px; }
+main { max-width: 900px; margin: 24px auto; padding: 24px; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+input, textarea, select { padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 14px; width: 100%; box-sizing: border-box; margin: 4px 0 12px; }
+button { background: #EE2737; color: #fff; border: 0; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+.error { color: #d4202f; padding: 8px; background: #fde; border-radius: 4px; }
+.success { color: #0a7a3e; padding: 8px; background: #e7f7ee; border-radius: 4px; }
+.card { padding: 16px; border: 1px solid #eee; border-radius: 6px; margin: 8px 0; }
+pre { background: #f7f7f9; padding: 12px; border-radius: 4px; overflow: auto; font-size: 13px; }
+</style>
+</head>
+<body>
+{% if session.user_id %}
+<header>
+  <div><span class="brand">VaultCorp</span> &nbsp; Internal Portal</div>
+  <nav>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/directory">Directory</a>
+    <a href="/profile">Profile</a>
+    <a href="/store">Store</a>
+    <a href="/logout">Logout</a>
+  </nav>
+</header>
+{% endif %}
+<main>{% block content %}{% endblock %}</main>
+</body>
+</html>

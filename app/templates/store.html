@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Store</h1>
+<p><strong>Balance:</strong> {{ user.coins }}</p>
+{% if message %}<div class="success">{{ message }}</div>{% endif %}
+<h3>Items</h3>
+<table>
+<tr><th>Name</th><th>Price</th><th>Description</th><th></th></tr>
+{% for item in items %}
+<tr>
+<td>{{ item.name }}</td><td>{{ item.price }}</td><td>{{ item.description }}</td>
+<td><form method="post" action="/store/buy" style="margin:0">
+<input type="hidden" name="item_id" value="{{ item.id }}">
+<button type="submit">Buy</button></form></td>
+</tr>
+{% endfor %}
+</table>
+<h3>Transfer</h3>
+<form method="post" action="/store/transfer">
+<label>To user id</label><input name="to_user" value="2">
+<label>Amount (must be positive)</label><input name="amount" type="number" value="10">
+<button type="submit">Transfer</button>
+</form>
+{% endblock %}
